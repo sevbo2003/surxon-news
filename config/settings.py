@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.blog',
     'apps.contact',
+    'apps.extrapages',
 ]
 
 MIDDLEWARE = [
