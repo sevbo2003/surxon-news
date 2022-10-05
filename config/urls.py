@@ -6,6 +6,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.blog.urls')),
+    path('murojat/', include('apps.contact.urls')),
 ]
 
 
