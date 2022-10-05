@@ -25,6 +25,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='post-images/')
     content = RichTextField()
     views = models.PositiveIntegerField(default=0)
     slug = models.SlugField(max_length=100, unique=True)
