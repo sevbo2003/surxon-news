@@ -12,3 +12,7 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request, 'contact/contact.html', {'form': form})
+
+
+def contact_informations(request):
+    return render(request, 'contact_informations.html')
