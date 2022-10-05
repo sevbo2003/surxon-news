@@ -32,9 +32,11 @@ INSTALLED_APPS = [
     # Third party apps
     'ckeditor',
     'django_filters',
+
     # Local apps
     'apps.accounts',
     'apps.blog',
+    'apps.contact',
 ]
 
 MIDDLEWARE = [
