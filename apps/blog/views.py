@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from apps.blog.models import Category, Post
+from apps.blog.models import Post
+from django.utils import timezone
+from datetime import timedelta
 
 
 def home(request):
@@ -19,3 +21,22 @@ def post_detail(request, year, month, day, slug):
         'same_owner_posts': same_owner_posts,
     }
     return render(request, 'post_detail.html', context)
+
+
+def posts_by_category(request, category):
+    filter = request.GET.get('filter_by')
+    if filter:
+        if filter == 'featured':
+            posts = Post.objects.filter(category__slug=category, featured=True)
+        elif filter == 'popular':
+            posts = Post.objects.filter(category__slug=category).order_by('-views')
+        elif filter == 'popular7days':
+            try:
+                posts = Post.objects.filter(category__slug=category, created_at__gte=timezone.now() - timedelta(days=7)).order_by('-views')
+            except:
+                posts = Post.objects.filter(category__slug=category)
+        elif filter == 'random_posts':
+            posts = Post.objects.filter(category__slug=category).order_by('?')
+        return render(request, 'posts_by_category.html', {'posts': posts})
+    posts = Post.objects.filter(category__slug=category)
+    return render(request, 'posts_by_category.html', {'posts': posts})
