@@ -1,0 +1,16 @@
+/*  ----------------------------------------------------------------------------
+    responsive settings
+*/
+/* responsive landscape tablet */
+/* responsive portrait tablet */
+/* responsive portrait phone */
+/* College demo */
+.td-college {
+  /* Home Page - Global Settings */
+}
+.td-college .td-main-page-wrap {
+  padding-top: 20px;
+}
+.td-college #td-theme-settings .td-skin-buy a {
+  background-color: #295FCC;
+}
