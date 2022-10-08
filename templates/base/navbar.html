@@ -1,0 +1,46 @@
+{% load static %}
+<nav class="navbar ">
+    <div class="navbar--banner container">
+        <a href="{% url 'home' %}" class="navbar--banner__name">MuzrabotSanepid
+            </a>
+        <img src="{% static 'asssets/images/gerb.png' %}" alt="" class="navbar--banner__img">
+        <p class="navbar--banner__theme">MUZRABOT TUMAN SANITARIYA-EPIDEMIOLOGIK OSOYISHTALIK VA JAMOAT SALOMATLIGI BO‘LIMI</p>
+    </div>
+    <div  class="navbar--list container">
+        <div class="navbar__menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="navbar--list__pages">
+            <li class="navbar--list__social"><a href="#!"><span class="instagram"></span> <span class="telegram"></span></a><a href="#!"></a><a href="#!" class="exit"><span class="icon-exit"></span></a></li>
+            <li><a href="{% url 'home' %}">Bosh Sahifa</a></li>
+            <li class="navbar__uptodwn--click "><a href="#!" class="navbar__uptdown-href">MuzrabotSanEpid <span class="icon-chevrone"></span></a>
+                    <ul class="navbar--list__updown">
+                        <li><a href="#!">Hududiy Markazlar</a></li>
+                        <li><a href="#!">Rahbariyat</a></li>
+                        <li><a href="#!">Hujjatlar</a></li>
+                        <li><a href="#!">Salomatlik</a></li>
+                        <li class="navbar--list__covid"><a href="#!" >Covid-19 <span class="icon-chevrone"></span></a>
+                            <ul class="navbar--covid__uptdown">
+                                <li><a href="#!">COVID-19 | SAVOL JAVOBLAR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </li>
+            <li><a href="categoryPage.html">Profilaktika</a></li>
+            <li><a href="{% url 'contact-informations' %}">Bog’lanish</a></li>
+            <li><a href="#!">Korrupsiyaga qarshi kurash</a></li>
+            <li><a href="{% url 'contact' %}">Murojaat yuborish</a></li>
+        </ul>
+        <a href="#!" class="navbar--list__name">MuzrabotSanepid</a>
+
+        <li class=" navbar--list__search "><a href="#!" class="icon-search"></a>
+            <form action="" method="get" class="navbar--form">
+                <input type="text" autocomplete="off">
+                <button type="submit">Qidirish</button>
+            </form>
+        </li>
+
+    </div>
+</nav>

@@ -1,0 +1,106 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+
+	  <section class="category__head container">
+		<div class="head--router">
+			<a href="{% url 'home' %}">Bosh sahifa</a>
+			<span class="icon-chevrone"></span>
+			<p>{{category1.name}}</p>
+		</div>
+		<div class="hear--center">
+			<h3>{{category1.name}}</h3>
+			<ul class="head--category">
+				{% for category in categories %}
+					{% if category == category1 %}
+						<li class="active"><a href="{% url 'posts_by_category' category.slug %}">{{category.name}}</a></li>
+					{% else %}
+						<li><a href="{% url 'posts_by_category' category.slug %}">{{category.name}}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+	  </section>
+
+
+
+
+	  <section class="article container">
+		  <div class="slider article--last" >
+			<div class="popular__theme">
+				<h3>So‘nggi habarlar</h3>
+				  <a href="#!">Barchani ko'rish</a>
+			</div>
+			  <div class="slider-list">
+				<div class="slider-list__item">
+					{% for post in posts %}
+					<article class="article--last__item">
+						<div class="article--lastItem__img">
+							<img src="{{post.image.url}}" alt="">
+						</div>
+						<div class="article--lastItem__details">
+							<a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}">{{post.title}}</a>
+							<h6><a href="{% url 'posts_by_category' post.category.slug %}" class="article--last__category">{{post.category}}</a> {{post.created_at}}</h6>
+							<p>{{post.description}}...</p>
+							<a class="article--last__comment icon-comment"> <span>{{post.views}}</span></a>
+						</div>
+					</article>
+					{% endfor %}
+				</div>
+				<div class="slider-list__item">
+					{% for post in posts %}
+					<article class="article--last__item">
+						<div class="article--lastItem__img">
+							<img src="{{post.image.url}}" alt="">
+						</div>
+						<div class="article--lastItem__details">
+							<a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}">{{post.title}}</a>
+							<h6><a href="{% url 'posts_by_category' post.category.slug %}" class="article--last__category">{{post.category}}</a> {{post.created_at}}</h6>
+							<p>{{post.description}}...</p>
+							<a class="article--last__comment icon-comment"> <span>{{post.views}}</span></a>
+						</div>
+					</article>
+					{% endfor %}
+				</div>
+				
+			  </div>
+			  <div class="slider-controllers">
+				<button type="button" class="slider-btn prevv icon-Circlechevrone"></button>
+				<button type="button" class="slider-btn nextt icon-Circlechevrone"></button>
+			  </div>			  
+		</div>
+			<div class="slider  article--other" >
+				<h3>Tasodifiy maqolalar</h3>
+				<div class="slider-list">
+				  <div class="slider-list__item">
+					{% for post in random_posts %}
+						<article class="article--other__item">
+							<div class="article--otherItem__img">
+								<img src="{{post.image.url}}" alt="">
+								<span>uncategorized</span>
+							</div>
+							<h4>{{post.title}}</h4>
+							<a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}" class="article--otherItem__link"></a>
+						</article>
+					{% endfor %}
+				  </div>
+				  <div class="slider-list__item">
+					{% for post in random_posts %}
+						<article class="article--other__item">
+							<div class="article--otherItem__img">
+								<img src="{{post.image.url}}" alt="">
+								<span>uncategorized</span>
+							</div>
+							<h4>{{post.title}}</h4>
+							<a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}" class="article--otherItem__link"></a>
+						</article>
+					{% endfor %}
+				  </div>
+				  
+				</div>
+				<div class="slider-controllers">
+				  <button type="button" class="slider-btn prevv icon-Circlechevrone"></button>
+				  <button type="button" class="slider-btn nextt icon-Circlechevrone"></button>
+				</div>			  
+		</div>
+
+	  </section>
+{% endblock %}

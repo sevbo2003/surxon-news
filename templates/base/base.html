@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}MuzrabotSanepid{% endblock title %}</title>
+	<link rel="shortcut icon" href="{% static 'asssets/images/gerb.png' %}" type="image/x-icon">
+	<link rel="stylesheet" href="{% static 'asssets/css/splide-core.min.css' %}">
+	<script src="{% static 'asssets/js/splide.min.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'asssets/css/main.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+<body>
+    {% include 'base/navbar.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'base/footer.html' %}
+	<script src="{% static 'asssets/js/main.js' %}"></script>
+</body>
+</html>

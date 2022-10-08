@@ -11,7 +11,7 @@ def contact(request):
             return render(request, 'contact.html', {'form': form})
     else:
         form = ContactForm()
-    return render(request, 'contact/contact.html', {'form': form})
+    return render(request, 'contact.html', {'form': form})
 
 
 def contact_informations(request):

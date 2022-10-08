@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %} 
+{% load static %}
+{% block content %}
+	  <!-- body -->
+	  <section class="article container">
+		  <div class=" contact-form " >
+			<div class="text">Murojaat yuborish</div>      
+			<form action="" method="post">{% csrf_token %}
+				<div class="form-row">
+				   <div class="input-data">
+					  <input type="text" name="full_name" id="id_full_name" required>
+					  <div class="underline"></div>
+					  <label for="full_name">Ism, familiya, otasining ismi 
+					</label>
+				   </div>
+				   <div class="input-data">
+					  <input type="number" name="phone_number" id="id_phone_number" required>
+					  <div class="underline"></div>
+					  <label for="">Telefon raqam</label>
+				   </div>
+				</div>
+				<div class="form-row">
+				   <div class="input-data">
+					  <input type="email" name="email" id="id_email" required>
+					  <div class="underline"></div>
+					  <label for="">Email </label>
+				   </div>
+				   
+				</div>
+				<div class="form-row">
+				   <div class="input-data textarea">
+					  <textarea rows="8" cols="80" name="message" id="id_message" required></textarea>
+					  <br />
+					  <div class="underline"></div>
+					  <label for="">Xabar matni *
+					</label>
+					  <br />
+					  <div class="form-row submit-btn">
+						 <div class="input-data">
+							<div class="inner"></div>
+							<input type="submit" value="Jo'natish">
+						 </div>
+					  </div>
+				   </div>
+				</div>
+			 </form>
+			  			  
+		</div>
+			<div class="slider  article--other" >
+				<h3>Tasodifiy maqolalar</h3>
+				<div class="slider-list">
+				  <div class="slider-list__item">
+					{% for post in random_posts %}
+						<article class="article--other__item">
+							<div class="article--otherItem__img">
+								<img src="{{post.image.url}}" alt="">
+								<span>uncategorized</span>
+							</div>
+							<h4>{{post.title}}</h4>
+							<a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}" class="article--otherItem__link"></a>
+						</article>
+					{% endfor %}
+				  </div>
+				  <div class="slider-list__item">
+					{% for post in random_posts %}
+						<article class="article--other__item">
+							<div class="article--otherItem__img">
+								<img src="{{post.image.url}}" alt="">
+								<span>uncategorized</span>
+							</div>
+							<h4>{{post.title}}</h4>
+							<a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}" class="article--otherItem__link"></a>
+						</article>
+					{% endfor %}
+				  </div>
+				  
+				</div>
+				<div class="slider-controllers">
+				  <button type="button" class="slider-btn prevv icon-Circlechevrone"></button>
+				  <button type="button" class="slider-btn nextt icon-Circlechevrone"></button>
+				</div>			  
+		</div>
+
+	  </section>
+{% endblock %}

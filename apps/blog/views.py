@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from apps.blog.models import Post
+from apps.blog.models import Post, Category
 from apps.blog.filters import PostSearchFilter
 from django.utils import timezone
 from datetime import timedelta
@@ -15,6 +15,8 @@ def home(request):
 
 def post_detail(request, year, month, day, slug):
     post = get_object_or_404(Post, slug=slug, created_at__year=year, created_at__month=month, created_at__day=day)
+    post.views += 1
+    post.save()
     next_post = Post.objects.filter(created_at__gt=post.created_at).order_by('created_at').first()
     previous_post = Post.objects.filter(created_at__lt=post.created_at).order_by('-created_at').first()
     same_posts = Post.objects.filter(category=post.category).exclude(id=post.id).order_by('-created_at')
@@ -30,7 +32,9 @@ def post_detail(request, year, month, day, slug):
 
 
 def posts_by_category(request, category):
+    category1=Category.objects.get(slug=category)
     filter = request.GET.get('filter_by')
+    categories = Category.objects.all()
     if filter:
         if filter == 'featured':
             posts = Post.objects.filter(category__slug=category, featured=True)
@@ -45,4 +49,4 @@ def posts_by_category(request, category):
             posts = Post.objects.filter(category__slug=category).order_by('?')
         return render(request, 'posts_by_category.html', {'posts': posts})
     posts = Post.objects.filter(category__slug=category)
-    return render(request, 'posts_by_category.html', {'posts': posts})
+    return render(request, 'posts_by_category.html', {'posts': posts, 'categories': categories, 'category1': category1})
