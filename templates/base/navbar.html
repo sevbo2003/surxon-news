@@ -20,7 +20,7 @@
                         <li><a href="#!">Hududiy Markazlar</a></li>
                         <li><a href="#!">Rahbariyat</a></li>
                         <li><a href="#!">Hujjatlar</a></li>
-                        <li><a href="#!">Salomatlik</a></li>
+                        <li><a href="{% url 'posts_by_category' 'salomatlik' %}">Salomatlik</a></li>
                         <li class="navbar--list__covid"><a href="#!" >Covid-19 <span class="icon-chevrone"></span></a>
                             <ul class="navbar--covid__uptdown">
                                 <li><a href="#!">COVID-19 | SAVOL JAVOBLAR</a></li>
@@ -28,7 +28,7 @@
                         </li>
                     </ul>
             </li>
-            <li><a href="categoryPage.html">Profilaktika</a></li>
+            <li><a href="{% url 'posts_by_category' 'profilaktika' %}">Profilaktika</a></li>
             <li><a href="{% url 'contact-informations' %}">Bog’lanish</a></li>
             <li><a href="#!">Korrupsiyaga qarshi kurash</a></li>
             <li><a href="{% url 'contact' %}">Murojaat yuborish</a></li>
@@ -36,8 +36,8 @@
         <a href="#!" class="navbar--list__name">MuzrabotSanepid</a>
 
         <li class=" navbar--list__search "><a href="#!" class="icon-search"></a>
-            <form action="" method="get" class="navbar--form">
-                <input type="text" autocomplete="off">
+            <form action="{% url 'home' %}" method="get" class="navbar--form">
+                <input type="text" name="qidirish">
                 <button type="submit">Qidirish</button>
             </form>
         </li>
