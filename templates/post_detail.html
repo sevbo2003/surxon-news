@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+      <section class="article container director">
+        <div class="contact--info" >
+          <div class="head--router">
+              <a href="index.html">Bosh sahifa</a>
+              <span class="icon-chevrone"></span>
+              <p>Rahbariyat</p>
+          </div>
+         
+          <div class="contact--info--more">
+            <h3>{{post.title}}</h3>
+            <div class="centers--location">
+               
+               <div class="center--location--more">
+                    {{post.content|safe}}
+               </div>
+            </div>
+        </div>          
+      </div>
+    </section>
+
+
+
+
+{% endblock %}

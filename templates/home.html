@@ -17,7 +17,7 @@
 						<p></p>
 					</div>
 					<div class="swap--item__category">{{post.category.name}}</div>
-					<a href="#!" class="swap--item__link"></a>
+					<a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}" class="swap--item__link"></a>
 	</div>
 	{% endif %} {% endfor %}
 	</li>
@@ -32,7 +32,7 @@
 				<p></p>
 			</div>
 			<div class="swap--item__category">{{post.category.name}}</div>
-			<a href="#!" class="swap--item__link"></a>
+			<a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}" class="swap--item__link"></a>
 			</div>
 			{% endif %} {% endfor %}
 	</li>
