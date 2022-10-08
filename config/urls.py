@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('apps.blog.urls')),
     path('', include('apps.extrapages.urls')),
     path('murojat/', include('apps.contact.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 
