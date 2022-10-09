@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from apps.contact.models import Contact
 from apps.contact.forms import ContactForm
+from apps.extrapages.models import Boglanish
 
 
 def contact(request):
@@ -15,4 +16,8 @@ def contact(request):
 
 
 def contact_informations(request):
-    return render(request, 'contact_informations.html')
+    try:
+        contact = Boglanish.objects.get(id=1)
+    except:
+        contact = None
+    return render(request, 'contact_informations.html', {'contact': contact})

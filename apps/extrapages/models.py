@@ -37,3 +37,21 @@ class Rahbar(models.Model):
         ordering = ['-created_at']
         verbose_name = 'Rahbar'
         verbose_name_plural = 'Rahbariyat'
+
+
+class Boglanish(models.Model):
+    manzil = models.CharField(max_length=200)
+    telefon = models.CharField(max_length=200)
+    faks = models.CharField(max_length=200)
+    moljalari = models.CharField(max_length=200)
+    avtobuslar = models.CharField(max_length=200)
+    link = models.URLField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = "Bog'lanish"
+        verbose_name_plural = "Bog'lanishlar"

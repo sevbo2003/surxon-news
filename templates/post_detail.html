@@ -1,25 +1,93 @@
 {% extends 'base/base.html' %} {% load static %} {% block content %}
-      <section class="article container director">
-        <div class="contact--info" >
-          <div class="head--router">
-              <a href="index.html">Bosh sahifa</a>
-              <span class="icon-chevrone"></span>
-              <p>Rahbariyat</p>
-          </div>
-         
-          <div class="contact--info--more">
-            <h3>{{post.title}}</h3>
-            <div class="centers--location">
-               
-               <div class="center--location--more">
-                    {{post.content|safe}}
-               </div>
+
+	  <section class="head--postdetail category__head container " style="align-items: flex-end;">
+		<div class="head--router">
+			<a href="{% url 'home' %}">Bosh sahifa</a>
+			<span class="icon-chevrone"></span>
+            <a href="{% url 'posts_by_category' post.category.slug %}">{{post.category.name}}</a>
+			<span class="icon-chevrone"></span>
+			<p>{{post.title}}</p>
+		</div>
+		<div class="hear--center  ">
+			<h3>{{post.title}}</h3>
+			<ul class="head--category">
+				<li class="active"><a href="#!" >{{post.category.name}}</a></li>
+			
+			</ul>
+            <div class="popilar--details--other">
+                <p><span>{{post.author}}</span> - {{post.created_at}}</p>
+                <a href="#!" class="article--last__comment icon-comment"> <span>{{post.views}}</span></a>
             </div>
-        </div>          
+		</div>
+
+	  </section>
+
+
+
+
+      <section class="article container details">
+        <div class="contact--info" >
+          
+          <div class="contact--info--more ">
+            {{ post.content|safe}}    
+          </div>
+          <div class="footer__social">
+            <ul>
+              <li><i class="fab fa-facebook-f"></i></li>
+              <li><i class="fab fa-telegram"></i></li>
+              <li><i class="fab fa-google"></i></li>
+           </ul>
+        </div>
+        <div class="detailsnexyt">
+            <a href="{% url 'post_detail' previous_post.created_at.year previous_post.created_at.month previous_post.created_at.day previous_post.slug %}" class="detail--next">
+                <p>Oldingi sahifa</p>
+                <h3>{{previous_post}}</h3>
+            </a>
+            <a href="{% url 'post_detail' next_post.created_at.year next_post.created_at.month next_post.created_at.day next_post.slug %}" class="detail--prev">
+                <p>Keyingi sahifa</p>
+                <h3>{{next_post}}</h3>
+            </a>
+        </div>
+        <div class="details--who__add">
+            <img src="{% static 'asssets/images/whoadd.jpeg' %}" alt="">
+            <h3>{{post.author}}</h3>
+        </div>
+                          
       </div>
+          <div class="slider  article--other" >
+              <h3>Tasodifiy maqolalar</h3>
+              <div class="slider-list">
+                <div class="slider-list__item">
+                  {% for post1 in random_posts %}
+                    <article class="article--other__item">
+                        <div class="article--otherItem__img">
+                            <img src="{{post.image.url}}" alt="">
+                            <span>{{post1.category.name}}</span>
+                        </div>
+                        <h4>{{post1.title}}</h4>
+                        <a href="{% url 'post_detail' post1.created_at.year post1.created_at.month post1.created_at.day post1.slug %}" class="article--otherItem__link"></a>
+                    </article>
+                  {% endfor %}
+                </div>
+                <div class="slider-list__item">
+                  {% for post1 in random_posts %}
+                    <article class="article--other__item">
+                        <div class="article--otherItem__img">
+                            <img src="{{post.image.url}}" alt="">
+                            <span>{{post1.category.name}}</span>
+                        </div>
+                        <h4>{{post1.title}}</h4>
+                        <a href="{% url 'post_detail' post1.created_at.year post1.created_at.month post1.created_at.day post1.slug %}" class="article--otherItem__link"></a>
+                    </article>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="slider-controllers">
+                <button type="button" class="slider-btn prevv icon-Circlechevrone"></button>
+                <button type="button" class="slider-btn nextt icon-Circlechevrone"></button>
+              </div>			  
+      </div>
+
     </section>
-
-
-
 
 {% endblock %}

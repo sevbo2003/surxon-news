@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.extrapages.models import HududiyMarkaz, Rahbar
+from apps.extrapages.models import HududiyMarkaz, Rahbar, Boglanish
 
 def hududiy_markazlar(request):
     markazlar = HududiyMarkaz.objects.all()
