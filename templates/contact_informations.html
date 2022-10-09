@@ -9,7 +9,7 @@
 				<p>Profilaktika</p>
 			</div>
 			<div class="contact--info--more">
-				<h3>Bog‘lanish</h3>
+				<h1 style="font-weight: bold;">Bog‘lanish</h1>
 				<p><span>Manzil:</span>{{contact.manzil}}</p>
 				<p><span>Telefon:</span>{{contact.telefon}}</p>
 				<p><span>Mo‘ljal:</span>{{contact.moljalari}}</p>
@@ -25,7 +25,7 @@
 						  <article class="article--other__item">
 							  <div class="article--otherItem__img">
 								  <img src="{{post.image.url}}" alt="">
-								  <span>uncategorized</span>
+								  <span>{{post.category.name}}</span>
 							  </div>
 							  <h4>{{post.title}}</h4>
 							  <a href="{% url 'post_detail' post.created_at.year post.created_at.month post.created_at.day post.slug %}" class="article--otherItem__link"></a>
