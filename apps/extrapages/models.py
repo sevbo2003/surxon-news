@@ -45,9 +45,6 @@ class Boglanish(models.Model):
     moljalari = models.CharField(max_length=200)
     link = models.URLField()
     created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self) -> str:
-        return self.title
     
     class Meta:
         ordering = ['-created_at']
