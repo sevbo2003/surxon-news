@@ -38,16 +38,6 @@
               <li><i class="fab fa-google"></i></li>
            </ul>
         </div>
-        <div class="detailsnexyt">
-            <a href="{% url 'post_detail' previous_post.created_at.year previous_post.created_at.month previous_post.created_at.day previous_post.slug %}" class="detail--next">
-                <p>Oldingi sahifa</p>
-                <h3>{{previous_post}}</h3>
-            </a>
-            <a href="{% url 'post_detail' next_post.created_at.year next_post.created_at.month next_post.created_at.day next_post.slug %}" class="detail--prev">
-                <p>Keyingi sahifa</p>
-                <h3>{{next_post}}</h3>
-            </a>
-        </div>
         <div class="details--who__add">
             <img src="{% static 'asssets/images/whoadd.jpeg' %}" alt="">
             <h3>{{post.author}}</h3>
