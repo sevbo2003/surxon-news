@@ -16,8 +16,5 @@ def contact(request):
 
 
 def contact_informations(request):
-    try:
-        contact = Boglanish.objects.get(id=1)
-    except:
-        contact = None
+    contact = Boglanish.objects.last()
     return render(request, 'contact_informations.html', {'contact': contact})
