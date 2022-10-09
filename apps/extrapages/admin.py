@@ -20,7 +20,7 @@ class RahbarAdmin(admin.ModelAdmin):
 
 @admin.register(Boglanish)
 class BoglanishAdmin(admin.ModelAdmin):
-    list_display = ['manzil', 'telefon', 'moljalari', 'link', 'created_at']
-    list_filter = ['manzil', 'telefon', 'moljalari', 'link', 'created_at']
-    search_fields = ['manzil', 'telefon', 'moljalari', 'link', 'created_at']
+    list_display = ['manzil', 'telefon', 'moljalari', 'created_at']
+    list_filter = ['manzil', 'telefon', 'moljalari', 'created_at']
+    search_fields = ['manzil', 'telefon', 'moljalari', 'created_at']
     list_per_page = 5

@@ -43,7 +43,6 @@ class Boglanish(models.Model):
     manzil = models.CharField(max_length=200)
     telefon = models.CharField(max_length=200)
     moljalari = models.CharField(max_length=200)
-    link = models.URLField()
     created_at = models.DateTimeField(auto_now_add=True)
     
     class Meta:
