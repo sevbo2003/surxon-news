@@ -54,7 +54,7 @@ body {
 }
 
 .instagram::before {
-	content: '\f16d';
+	content: '\f39e';
 	font-weight: 400;
 }
 
@@ -1595,36 +1595,6 @@ form .form-row .textarea {
 		min-height: 800px;
 	}
 
-	/* popular */
-	.popular--item {
-		width: 45%;
-	}
-
-	/* footer */
-	.footer {
-		gap: 50px;
-	}
-
-	.footer__social {
-		width: 90%;
-	}
-
-	.footer__aboutUS {
-		justify-content: space-evenly;
-		width: 90%;
-	}
-
-	.contact--info {
-		width: 90%;
-	}
-
-	.swipe__item--theme {
-		font-weight: 600;
-		color: #ffffff;
-		font-size: 15px;
-		line-height: 14px;
-	}
-
 	.article--last__item p {
 		display: none;
 	}
@@ -1671,6 +1641,24 @@ form .form-row .textarea {
 
 	.contact-form {
 		width: 100%;
+	}
+
+	.hear--center h3 {
+		font-size: 30px;
+		line-height: 28px;
+	}
+
+	.head--category {
+		padding: 5px;
+	}
+
+	.category__head {
+		padding: 10px 5px;
+	}
+
+	.head--postdetail .head--router {
+		left: 5px;
+		flex-wrap: wrap;
 	}
 
 
