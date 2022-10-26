@@ -1,10 +1,10 @@
 {% load static %}
 <nav class="navbar ">
     <div class="navbar--banner container">
-        <a href="{% url 'home' %}" class="navbar--banner__name">BandixonSanepid
+        <a href="{% url 'home' %}" class="navbar--banner__name">Qiziriqsanepid
             </a>
         <img src="{% static 'asssets/images/gerb.png' %}" alt="" class="navbar--banner__img">
-        <p class="navbar--banner__theme">BANDIXON TUMANI SANITARIYA-EPIDEMIOLOGIK OSOYISHTALIK VA JAMOAT SALOMATLIGI BO‘LIMI</p>
+        <p class="navbar--banner__theme">QIZIRIQ TUMANI SANITARIYA-EPIDEMIOLOGIK OSOYISHTALIK VA JAMOAT SALOMATLIGI BO‘LIMI</p>
     </div>
     <div  class="navbar--list container">
         <div class="navbar__menu-button">
@@ -15,7 +15,7 @@
         <ul class="navbar--list__pages">
             <li class="navbar--list__social"><a href="#!"><span class="instagram"></span> <span class="telegram"></span></a><a href="#!"></a><a href="#!" class="exit"><span class="icon-exit"></span></a></li>
             <li><a href="{% url 'home' %}">Bosh Sahifa</a></li>
-            <li class="navbar__uptodwn--click "><a href="#!" class="navbar__uptdown-href">BandixonSanEpid <span class="icon-chevrone"></span></a>
+            <li class="navbar__uptodwn--click "><a href="#!" class="navbar__uptdown-href">QiziriqSanEpid <span class="icon-chevrone"></span></a>
                     <ul class="navbar--list__updown">
                         <li><a href="{% url 'rahbarlar' %}">Rahbariyat</a></li>
                         <li><a href="#!">Hujjatlar</a></li>
@@ -32,7 +32,7 @@
             <li><a href="{% url 'posts_by_category' 'korruptsiya' %}">Korrupsiyaga qarshi kurash</a></li>
             <li><a href="{% url 'contact' %}">Murojaat yuborish</a></li>
         </ul>
-        <a href="#!" class="navbar--list__name">BandixonSanepid</a>
+        <a href="#!" class="navbar--list__name">Qiziriqsanepid</a>
 
         <li class=" navbar--list__search "><a href="#!" class="icon-search"></a>
             <form action="{% url 'home' %}" method="get" class="navbar--form">
