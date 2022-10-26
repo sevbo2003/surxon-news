@@ -1660,6 +1660,12 @@ form .form-row .textarea {
 		left: 5px;
 		flex-wrap: wrap;
 	}
+	.footer__aboutUS{
+		width: 90%;
+	}
+	.footer__social{
+		width: 90%;	
+	}
 
 
 }
