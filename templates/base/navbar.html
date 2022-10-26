@@ -1,10 +1,10 @@
 {% load static %}
 <nav class="navbar ">
     <div class="navbar--banner container">
-        <a href="{% url 'home' %}" class="navbar--banner__name">Qiziriqsanepid
+        <a href="{% url 'home' %}" class="navbar--banner__name">Sho'rchisanepid
             </a>
         <img src="{% static 'asssets/images/gerb.png' %}" alt="" class="navbar--banner__img">
-        <p class="navbar--banner__theme">QIZIRIQ TUMANI SANITARIYA-EPIDEMIOLOGIK OSOYISHTALIK VA JAMOAT SALOMATLIGI BO‘LIMI</p>
+        <p class="navbar--banner__theme">SHO'RCHI TUMANI SANITARIYA-EPIDEMIOLOGIK OSOYISHTALIK VA JAMOAT SALOMATLIGI BO‘LIMI</p>
     </div>
     <div  class="navbar--list container">
         <div class="navbar__menu-button">
@@ -32,7 +32,7 @@
             <li><a href="{% url 'posts_by_category' 'korruptsiya' %}">Korrupsiyaga qarshi kurash</a></li>
             <li><a href="{% url 'contact' %}">Murojaat yuborish</a></li>
         </ul>
-        <a href="#!" class="navbar--list__name">Qiziriqsanepid</a>
+        <a href="#!" class="navbar--list__name">Sho'rchisanepid</a>
 
         <li class=" navbar--list__search "><a href="#!" class="icon-search"></a>
             <form action="{% url 'home' %}" method="get" class="navbar--form">
